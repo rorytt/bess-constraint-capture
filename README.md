@@ -50,8 +50,8 @@ The BESS model ([`src/BESS/`](src/BESS/)) takes node-level hourly curtailment an
 The model optimises battery size (MW) and capacity (MWh) to maximise 15-year NPV, accounting for degradation, OPEX, and inflation. An alpha/beta sensitivity analysis varies the curtailment allocation parameters across the available node dataset.
 
 Two model variants are included:
-- **Wind + DS3** — wind-dominant node with full DS3 revenue stack
-- **Wind + DS3 + Solar** — adds solar curtailment capture to the same BESS
+- **[BESS Model Wind](src/BESS/BESS%20Model%20Wind.ipynb)** — wind-dominant node with full DS3 revenue stack
+- **[BESS Model Solar](src/BESS/BESS%20Model%20Solar.ipynb)** — adds solar curtailment capture to the same BESS
 
 ---
 
