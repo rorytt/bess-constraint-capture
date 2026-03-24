@@ -6,7 +6,7 @@ A bottom-up model for allocating wind and solar curtailment to individual grid n
 
 ## Problem
 
-Wind curtailment in Ireland has grown significantly as renewable penetration increases. At constrained nodes, generation is backed down to maintain system security — energy that a co-located BESS could otherwise capture and arbitrage. Quantifying this curtailment at the node level, and modelling the revenue a BESS could earn from capturing it, requires combining ERA5 reanalysis weather data, EirGrid constraint data, and DS3 ancillary service tariffs.
+Wind and solar curtailment in Ireland has grown significantly as renewable penetration increases. When local transmission elements reach their thermal limits and become constrained, renewable energy is dispatched down (curtailed) to maintain system security — energy that a co-located BESS could otherwise capture and arbitrage. Quantifying this curtailment at the node level, and modelling the revenue a BESS could earn from capturing it, requires combining ERA5 reanalysis weather data, EirGrid constraint data, and a range of energy storage revenue streams including DS3 ancillary service tariffs, CRM payments, curtailment capture and arbitrage revenues.
 
 ---
 
@@ -50,8 +50,8 @@ The BESS model ([`src/BESS/`](src/BESS/)) takes node-level hourly curtailment an
 The model optimises battery size (MW) and capacity (MWh) to maximise 15-year NPV, accounting for degradation, OPEX, and inflation. An alpha/beta sensitivity analysis varies the curtailment allocation parameters across the available node dataset.
 
 Two model variants are included:
-- **[BESS Model Wind](src/BESS/BESS%20Model%20Wind.ipynb)** — wind-dominant node with full DS3 revenue stack
-- **[BESS Model Solar](src/BESS/BESS%20Model%20Solar.ipynb)** — adds solar curtailment capture to the same BESS
+- **[BESS Model Wind](src/BESS/BESS%20Model%20Wind.ipynb)** — wind-dominant node 
+- **[BESS Model Solar](src/BESS/BESS%20Model%20Solar.ipynb)** — solar-dominant node
 
 ---
 
@@ -79,7 +79,7 @@ Raw and processed data are not included in this repository. ERA5 data can be dow
 
 ```
 src/
-├── BESS/                   # BESS financial model notebooks
+├── BESS/                   # BESS curtailment capture and financial model notebooks
 ├── era5/                   # ERA5 download, extraction, and validation
 ├── preprocessing/          # EirGrid constraint and availability preprocessing
 ├── cf/                     # Capacity factor modelling (wind + solar)
