@@ -42,8 +42,7 @@ The BESS model ([`src/BESS/`](src/BESS/)) takes node-level hourly curtailment an
 | Revenue Stream | Description |
 |---|---|
 | **Constraint capture** | Curtailed MWh absorbed by the BESS and sold at spot price |
-| **DS3 ancillary services** | FFR, POR, SOR, TOR1, TOR2 — post-Jan 2022 tariff rates |
-| **Temporal Scarcity Scalar** | Multiplies DS3 payments based on hourly SNSP (post-Oct 2024 rates: ×4.0 above 70%) |
+| **DS3 ancillary services** | FFR, POR, SOR, TOR1, TOR2 — post-Jan 2022 tariff rates, derated significantly to account for changes in market with introduction of DASSA in 2027 |
 | **Energy arbitrage** | Grid charging during cheap overnight window; discharge during peak (17:00–21:00) |
 | **CRM** | Capacity Remuneration Mechanism revenue over project term |
 
